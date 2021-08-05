@@ -1,13 +1,57 @@
 @import "~normalize.css";
 
-@import "_variables";
-@import "modules/hello.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;400;700&display=swap");
 
 body {
-  background: $wtf;
-  color: #fff;
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+    "header header header header header header header header header header header header";
+  font-family: "Roboto Mono", monospace;
+}
+.header {
+  background-color: #252525;
+  grid-area: header;
+  font-weight: 400;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  flex-direction: row;
+  &__text {
+    margin: 0;
+    padding-left: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: 200;
+    color: white;
+  }
+  &__navigation {
+    margin: 0;
+  }
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 16px;
+    &-item {
+      background-color: white;
+      padding: 16px;
+      margin: auto 8px;
+      width: 100px;
+      min-width: 75px;
+      text-align: center;
+      border-radius: 16px;
+    }
+  }
+}
+.main {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  grid-column-end: 10;
+}
+.footer {
+  grid-column-start: 1;
+  grid-row-start: 3;
+  grid-column-end: 13;
 }
